@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+              <meta charset="UTF-8">
+              <meta http-equiv="X-UA-Compatible" content="IE=edge">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>DOM Handson</title>
+              <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+            <h2 class="main">DOM</h2> 
+
+          <!-- QUES 1: -->
+            <h2>Q1: Write the code to access element which is having id as "text".</h2> 
+            <h2 id="text"></h2>
+            <pre>
+               ANS: let first = document.getElementById("text");
+                        console.log(first)
+            </pre> 
+            <p>Explanation:- This will retrieve the element with id attribute set to "text" and store it in the first variable.</p>
+
+
+
+            <!-- QUES 2: -->
+            <h2>Q2: Write the code to access element which is having tag as "h1".</h2>
+            <h1></h1>
+            <pre>
+               ANS: let second = document.getElementsByTagName("h1");
+                         console.log(second);
+            </pre>
+            <p> Explanaton:-
+               This code selects all the HTML elements with the tag name "h1" and assigns them to the variable second. The
+               document.getElementsByTagName() method is used to retrieve all the elements with a specified tag name, in this case "h1".</p>
+
+
+
+            <!-- QUES 3: -->
+            <h2>Q3: Write the code to access element which is having class as "box".</h2>
+            <h4 class="box"></h4>
+            <pre>         
+                  ANS: let third = document.getElementsByClassName("box");
+                                 console.log(third);
+            </pre>
+            <p>Explanaton:-
+               This code selects all the HTML elements with the class name "box" and assigns them to the variable third. The document.getElementsByClassName() method is used to retrieve all the elements with a
+               specified class name, in this case "box".</p>
+
+
+
+            <!-- QUES 4: -->
+            <h2>Q4 : &lth1&gt Hello &lt/h1&gt </h2>
+            <h2>Change the heading from "Hello" to "Hello World" using DOM functions.</h2>
+            <h1 class="changeText">Hello</h1> 
+             <button onclick="changeMe()">Change Text</button> 
+            
+            <pre>
+               let changeText = document.getElementsByClassName("changeText");
+                       console.log(changeText[0].innerHTML);
+                        changeText[0].innerHTML = "Hello World"
+            </pre>
+            <p> Explanation:-
+               getElementByClassName method and assigns it to the changeText variable . The getElementByClassName() method selects the first element.
+               The textContent property of the changeText element is then modified by assigning it the new string value of "Hello World".
+               This will change the text content of the h1 element to "Hello World".</p>
+
+
+
+            
+            <!-- QUES 5: -->
+            <h2>Q5:Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy". </h2>
+            <h1 class="change">Hello World</h1> 
+            <button onclick="trans()">Replace Text</button>
+
+            <pre>
+               var Change = document.getElementsByClassName("change");
+                         console.log(Change[0].innerHTML);
+
+               function trans(){
+                     Change[0].innerHTML ="Welcome to Elevation Academy";
+                      }
+            </pre>
+            <p>  Explanation:-
+               The function trans() will changes the content of an HTML element with the Class name "change".
+               The document.getElementByClassName() method is used to retrieve the HTML element . The innerHTML
+               property of the retrieved element is then assigned a new string value of "Welcome to Elevation academy".</p>
+
+            
+            <!-- QUES 6: -->
+            <h2>Q6 : &lth1&gt Hello &lt/h1&gt</h2>
+            <h2>Add one style attribute and give text color as red and id attribute and give the id value as "heading" in the above given h1 tag using DOM functions</h2>
+             <h1 id="heading">Hello</h1> 
+
+            <pre>
+               let six = document.getElementById("heading");
+                    console.log(six);
+                      six.style.color ="red"
+                       six.style.fontSize ="50px"
+            </pre>
+            <p> Explanation:
+               The JavaScript code document.getElementById('heading').style.color = "red"; changes the color of the text inside an HTML
+               element with the ID "heading" to red.</p>
+
+            
+
+            <!-- QUES 7: -->
+            <h2>Q7 :Create three cards on HTML page and arrange them using flex property in row or horizontal direction and also create button at the bottom named "Change Flex direction". When user clicks on this button, the cards arrangement should be changed to vertical direction.</h2>
+            <div class="parent">
+            <div class="box1"></div>
+             <div class="box2"></div>
+             <div class="box3"></div>
+             </div>
+             <button onclick="changeDirection()" class="box4">Change Flex Direction</button>
+
+             <pre>
+               let parent = document.querySelector(".parent");
+               let count=0;
+                function changeDirection(){
+                  if(count%2==0){
+                        parent.style.display ="block";
+                           count++;
+                             }
+
+                  else{
+                            parent.style.display ="flex";
+                            count--;
+                       }
+                        }
+             </pre>
+             <p>   Explanation:
+               In the HTML code I have created a container with three card elements inside and a button that triggers a
+               JavaScript function when clicked.
+               
+               The container has an class attribute of named "parent".
+               
+               Inside the container, there are three card elements and a class attribute of card. The
+               class attribute can be used to apply CSS styles.
+               
+               Finally, there is a button element. This button has an onclick attribute that calls the
+               changeDirection() function when clicked. This function is not defined in the JavaScript code that I have mentioned in the above.
+               When the button is clicked, the changeDirection() function will be executed.</p>
+
+
+            <!-- QUES 8: -->
+            <h2>Q8: What’s the difference between window vs document?</h2>
+            <h4>WINDOW :-</h4>
+           <ol type="1">
+            <li>It represents the browser window in which you are seeing the content.</li>
+            <li>The properties related to it are stored in the window object</li>
+            <li>It is loaded before the document because of the window container document.</li>
+            <li>The window is the global element for all objects,functions,etc.</li>
+            <li>It is an object properties inside the window.</lI>
+           </ol>
+
+           <h4>DOCUMENT :-</h4>
+           <ol type="1">
+            <li>It represent the document loaded inside the window or browser.</li>
+            <li>The properties related to it are stored in the document object.</li>
+            <li>It is loaded after the loading window because the window contain the document.</li>
+            <li>It is the root element of the document object model.</li>
+            <li>It is an object of window.</li>
+           </ol> 
+
+        <!-- QUES 9: -->
+    <h2>Q9: Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</h2>
+    <h5>Start Clock</h5>
+    <h5></h5>
+            <a href="./clock.js"></a>
+
+            <!-- QUES 10: -->
+            <h2>Q10 : Game</h2>
+            <a href="./game.html">GAME</a>
+            <a href="./game.js"></a>
+           
+         <script type="text/javascript" src="./style.js"></script>
+         <script type="text/javascript" src="./clock.js"></script>
+         
+
+</body>
+</html>
